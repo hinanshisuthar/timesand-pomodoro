@@ -20,9 +20,7 @@ const Navbar = () => {
           className="icon mr-sm font menu-icon"
           onClick={() => setMenu(!menu)}
         />
-        <div
-          className="responsive-img-container flex-row-sb logo-div mr-1"
-        >
+        <div className="responsive-img-container flex-row-sb logo-div mr-1">
           <img
             src="../assets/hero-img.svg"
             alt="paw-pedia-logo"
@@ -40,10 +38,7 @@ const Navbar = () => {
         </div>
         <div className="flex-row-sb ml-auto">
           <BsSunFill size={22} className="icon mx-sm font" />
-          <VscAccount
-            size={22}
-            className="icon mx-sm font acc-icon"
-          />
+          <VscAccount size={22} className="icon mx-sm font acc-icon" />
         </div>
       </div>
       <div className="search search-div-btm flex-row-sb my-sm">
@@ -56,18 +51,18 @@ const Navbar = () => {
       </div>
       {menu && (
         <div className="aside-con-responsive">
-            <div className="flex-row-sb-start p-1 side-option-div">
-              <AiFillHome size={23} className="icon m-sm" />
-              <h4 className="text-regular p-sm">Home</h4>
-            </div>
-            <div className="flex-row-sb-start p-1 side-option-div">
-              <AiFillPlayCircle size={23} className="icon m-sm" />
-              <h4 className="text-regular p-sm">My tasks</h4>
-            </div>
+          <div className="flex-row-sb-start p-1 side-option-div">
+            <AiFillHome size={23} className="icon m-sm" />
+            <h4 className="text-regular p-sm">Home</h4>
+          </div>
+          <div className="flex-row-sb-start p-1 side-option-div">
+            <AiFillPlayCircle size={23} className="icon m-sm" />
+            <h4 className="text-regular p-sm">My tasks</h4>
+          </div>
         </div>
       )}
     </div>
   );
 };
 
-export { Navbar }; 
+export { Navbar };
