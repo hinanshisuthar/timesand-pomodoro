@@ -64,5 +64,5 @@ const Navbar = () => {
     </div>
   );
 };
-
+ 
 export { Navbar };
