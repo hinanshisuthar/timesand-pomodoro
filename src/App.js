@@ -1,20 +1,19 @@
 import "./App.css";
 import { Navbar } from "./components/navbar/Navbar";
-import { NewTask } from "./components/new task/NewTask";
-import { TaskContainer } from "./components/tasks container/TaskContainer";
-import { Timer } from "./components/Timer/Timer";
+import {Routes, Route} from 'react-router-dom';
+import { Login } from "./pages/Authentication/Login";
+import { Signup } from "./pages/Authentication/Signup";
+import { Home } from "./pages/home/Home";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <div className="hero-sec">
-        <div className="new-task-con m-1">
-          <NewTask />
-          <TaskContainer />
-        </div>
-        <Timer />
-      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+      </Routes>
     </div>
   );
 }

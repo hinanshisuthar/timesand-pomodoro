@@ -1,5 +1,3 @@
-import { AiFillPlayCircle } from "../icons";
-
 const Timer = () => {
   return (
     <div className="new-task-con m-1 flex-col-start-center">
