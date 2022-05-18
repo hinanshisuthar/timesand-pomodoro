@@ -1,34 +1,23 @@
 import { BsFillTrashFill, BsPencilSquare } from "../icons";
 import "../new task/NewTask.css";
+import { useData } from "../../context/data-context";
 
 const TaskContainer = () => {
+  const {tasklist} = useData();
+
   return (
     <div className="">
       <div className="tasks-con flex-col-start-start p-1 m-1 box-sdw-lg">
-        <div className="flex-row-sb width-100 p-sm my-sm">
-          <label htmlFor="input" className="flex-row-sb-start width-100">
-            <input type="checkbox" className="width-mc m-sm" />
-            <h5 className="text-regular">Task 1</h5>
-          </label>
-          <BsPencilSquare className="icon ml-auto" size={20} />
-          <BsFillTrashFill className="mx-sm icon" size={20} />
-        </div>
-        <div className="flex-row-sb width-100 p-sm my-sm">
-          <label htmlFor="input" className="flex-row-sb-start width-100">
-            <input type="checkbox" className="width-mc m-sm" />
-            <h5 className="text-regular">Task 2</h5>
-          </label>
-          <BsPencilSquare className="icon ml-auto" size={20} />
-          <BsFillTrashFill className="mx-sm icon" size={20} />
-        </div>
-        <div className="flex-row-sb width-100 p-sm my-sm">
-          <label htmlFor="input" className="flex-row-sb-start width-100">
-            <input type="checkbox" className="width-mc m-sm" />
-            <h5 className="text-regular">Task 3</h5>
-          </label>
-          <BsPencilSquare className="icon ml-auto" size={20} />
-          <BsFillTrashFill className="mx-sm icon" size={20} />
-        </div>
+        {tasklist.map((task) => (
+          <div className="flex-row-sb width-100 p-sm my-sm" key={task.id}>
+            <label htmlFor="input" className="flex-row-sb-start width-100">
+              <input type="checkbox" className="width-mc m-sm" />
+              <h5 className="text-regular">{task.title}</h5>
+            </label>
+            <BsPencilSquare className="icon ml-auto" size={20} />
+            <BsFillTrashFill className="mx-sm icon" size={20} />
+          </div>
+        ))}
       </div>
       <div className="flex-col-sb-start width-100 p-1">
         <h4 className="p-sm">Task 1</h4>
