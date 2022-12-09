@@ -112,7 +112,7 @@ a {
 .modal-wrapper {
     background-color: var(--background-color);
     position: absolute;
-    top: 50rem;
+    top: 5rem;
     left: 10%;
     width: 80%;
     border-radius: var(--size-2);
@@ -170,5 +170,19 @@ a {
 @media screen and (max-width: 832px) {
     .aside-con {
         display: none;
+    }
+}
+
+@media screen and (min-width: 623px) {
+    .modal-wrapper {
+        width: 45%;
+    }
+}
+
+@media screen and (min-width: 975px) {
+    .modal-wrapper {
+    top: 20%;
+    left: 40%;
+    width: 25%;
     }
 }
