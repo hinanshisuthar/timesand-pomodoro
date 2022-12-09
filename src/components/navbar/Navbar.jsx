@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import {
   AiFillHome,
   AiFillPlayCircle,
@@ -11,6 +12,7 @@ import "./Navbar.css";
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <div className="p-1 nav-div">
@@ -20,14 +22,16 @@ const Navbar = () => {
           className="icon mr-sm font menu-icon"
           onClick={() => setMenu(!menu)}
         />
-        <div className="responsive-img-container flex-row-sb logo-div mr-1">
-          <img
-            src="../assets/hero-img.svg"
-            alt="paw-pedia-logo"
-            className="img-responsive"
-          />
-          <h3 className="font">Timesand</h3>
-        </div>
+        <Link to="/">
+          <div className="responsive-img-container flex-row-sb logo-div mr-1">
+            <img
+              src="../assets/hero-img.svg"
+              alt="paw-pedia-logo"
+              className="img-responsive"
+            />
+            <h3 className="font">Timesand</h3>
+          </div>
+        </Link>
         <div className="search search-div ml-auto flex-row-sb">
           <BsSearch className="m-sm font" size={18} />
           <input
@@ -38,7 +42,11 @@ const Navbar = () => {
         </div>
         <div className="flex-row-sb ml-auto">
           <BsSunFill size={22} className="icon mx-sm font" />
-          <VscAccount size={22} className="icon mx-sm font acc-icon" />
+          <VscAccount
+            size={22}
+            className="icon mx-sm font acc-icon"
+            onClick={() => navigate("/login")}
+          />
         </div>
       </div>
       <div className="search search-div-btm flex-row-sb my-sm">
@@ -64,5 +72,5 @@ const Navbar = () => {
     </div>
   );
 };
- 
+
 export { Navbar };
